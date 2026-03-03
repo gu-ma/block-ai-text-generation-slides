@@ -15,6 +15,7 @@ Tell your assistant:
 You are editing this Slidev project.
 
 ### Scope
+
 - Immutable template reference: `slides.example.md`
 - New working deck file per request: `slides-<name>.md` (or `slides-YYYY-MM-DD.md`)
 - `slides.md` is optional runtime entrypoint (only overwrite if user explicitly asks)
@@ -23,6 +24,7 @@ You are editing this Slidev project.
 - Static assets (images, logos, diagrams): `public/`
 
 ### Template constraints
+
 - Keep theme aligned with this repo example: `theme: apple-basic`
 - Apple Basic theme references:
   - Theme docs (raw): https://raw.githubusercontent.com/slidevjs/themes/refs/heads/main/packages/theme-apple-basic/README.md
@@ -32,18 +34,22 @@ You are editing this Slidev project.
 - Prefer existing layouts used in this repo (`intro-image`, `two-cols`, `image-right`, `center`)
 
 ### Input reality
+
 - User may provide: PPT/PPTX, Keynote, PDF, plain notes, or mixed material
 - `./temp/frontend-slides` is temporary and may disappear; do not depend on it
 - Do not invent files/assets that are not present
 - Prefer reading source files from `input/<deck-id>/`
 
 ### Output expectations
+
 Produce:
+
 1. A new working deck file derived from `slides.example.md`
 2. Any needed assets under `public/` (with clear paths)
 3. A short change summary (what was added/changed/split)
 
 ### Deck creation rule (mandatory)
+
 1. Start from `slides.example.md`
 2. Create a new file (`slides-<topic>.md` or `slides-YYYY-MM-DD.md`)
 3. Apply all edits to that new file
@@ -54,7 +60,9 @@ Produce:
 ## 2) Standard workflow (all input types)
 
 ### Step A — Intake
+
 Collect or infer:
+
 - Presentation goal
 - Audience
 - Duration / target slide count
@@ -63,14 +71,18 @@ Collect or infer:
 - Available visual assets
 
 Also create/use one input workspace folder per deck:
+
 - `input/<deck-id>/`
 
 Examples:
+
 - `input/2026-03-ai-course/`
 - `input/acme-product-launch/`
 
 ### Step B — Extraction
+
 Extract from source material:
+
 - Section titles
 - Core claims/messages
 - Supporting bullets/data
@@ -78,7 +90,9 @@ Extract from source material:
 - Speaker notes (if relevant)
 
 ### Step C — Transformation to Slidev
+
 Map extracted content into the new working deck file:
+
 - One main idea per slide
 - Split overloaded slides into multiple slides
 - Keep bullets concise (4–6 max per content slide)
@@ -102,13 +116,16 @@ Apply these rules to **every** generated deck:
   6. Closing (`layout: center`)
 
 Before finalizing, verify readability quickly:
+
 - clear hierarchy (title -> body)
 - no overloaded slides
 - consistent spacing and tone
 - smooth narrative progression
 
 ### Step D — QA pass
+
 Before finishing, verify:
+
 - Narrative flow is clear (opening → body → close)
 - Slide density is readable
 - Layout usage is consistent
@@ -120,26 +137,31 @@ Before finishing, verify:
 ## 3) Input-type playbooks
 
 ### A) PPT / PPTX
+
 1. Extract slide-by-slide outline (title + key bullets + visual notes)
 2. Rebuild, do not blindly copy
 3. Keep best visuals; move assets to `public/`
 4. Reformat into template patterns used in this repo
 
 ### B) Keynote
+
 1. Ask user to export to PPTX or PDF first
 2. Then use the PPT/PDF flow
 
 ### C) PDF
+
 1. Extract document structure (sections/subsections)
 2. Convert dense prose into presentation bullets
 3. Split long sections into short slide sequences
 
 ### D) Raw notes / mixed content
+
 1. Build a proposed outline first
 2. Convert each outline item into 1–2 slides
 3. Add visual placeholders only when assets are missing
 
 ### E) Missing images policy (mandatory)
+
 When required images are missing, follow this strict policy:
 
 1. Check local assets first:
@@ -171,6 +193,7 @@ If a valid source/license cannot be confirmed, use a placeholder and flag it for
 ## 4) Slide structure starter (based on this repository)
 
 Use this sequence by default:
+
 1. Title slide (`layout: intro-image`)
 2. Agenda / table of contents (`layout: two-cols` optional)
 3. Body sections (content, visuals, code/demo as needed)
@@ -203,6 +226,7 @@ hide: false
 ## 6) Reusable prompts (paste into any assistant)
 
 ### Prompt: from PPT/PPTX
+
 ```
 Follow instructions in docs/SLIDEV-INPUT-WORKFLOW.md.
 I will provide PPT/PPTX content. Convert it into this Slidev template.
@@ -212,6 +236,7 @@ Return: proposed filename + outline first, then apply changes.
 ```
 
 ### Prompt: from PDF
+
 ```
 Follow instructions in docs/SLIDEV-INPUT-WORKFLOW.md.
 I will provide PDF content. Extract structure and transform into a clean slide narrative.
@@ -220,6 +245,7 @@ Create a new deck file from slides.example.md and update that file.
 ```
 
 ### Prompt: refine existing deck
+
 ```
 Follow instructions in docs/SLIDEV-INPUT-WORKFLOW.md.
 Create a new working deck from slides.example.md.
@@ -233,6 +259,7 @@ Summarize all structural changes at the end.
 ## 7) Done criteria
 
 Task is complete when:
+
 - a new working deck file is created from `slides.example.md`
 - working deck content is coherent and presentation-ready
 - asset paths are valid and organized under `public/`

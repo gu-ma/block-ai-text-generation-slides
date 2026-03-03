@@ -1,678 +1,511 @@
 ---
-# https://sli.dev/custom/
-# You can also start simply with 'default'
 theme: apple-basic
-# random image from a curated Unsplash collection by Anthony
-# like them? see https://unsplash.com/collections/94734566/slidev
-# background: https://cover.sli.dev
-# favicon, can be a local file path or URL
 favicon: "/favicons/favicon-32x32.png"
-# force color schema for the slides, can be 'auto', 'light', or 'dark'
 colorSchema: auto
-# global fonts
 fonts:
   sans: IBM Plex Mono
   mono: IBM Plex Mono
-# some information about your slides (markdown enabled)
-# https://sli.dev/features/drawing
 drawings:
   persist: false
-# slide transition: https://sli.dev/guide/animations.html#slide-transitions
 transition: fade-out
-# enable MDC Syntax: https://sli.dev/features/mdc
 mdc: true
-# open graph
-# seoMeta:
-#  ogImage: https://cover.sli.dev
-# Config required for slidev-component-poll addon
 pollSettings:
   anonymous: true
 layout: intro-image
-image: "https://cover.sli.dev"
-title: "Presentation title"
+image: "https://images.unsplash.com/photo-1711641420780-658d136f2b64?auto=format&fit=crop&w=1600&q=80"
+title: "Text Machines, Real Art"
 ---
 
+<div class="absolute bottom-22">
+  <h1>Text Machines, Real Art</h1>
+  <p>How language models became an artistic medium</p>
+  <span class="font-700">AI Curriculum · D&K · 2026</span>
+</div>
 
-<div class="absolute bottom-30">
-  <h1>Presentation title</h1>
-  <p>Presentation subtitle</p>
-  <span class="font-700">
-    Author and Date
+<div class="absolute bottom-10">
+  <span style="font-size:.5rem">
+    Photo by <a href="https://unsplash.com/@ktfrancis?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">K.T. Francis</a> on <a href="https://unsplash.com/photos/a-very-tall-building-with-lots-of-windows-C6tq2KT4Lzg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
   </span>
 </div>
 
-<!-- 
-Commnents are the presenters notes
- -->
-
----
-
-# What is Slidev?
-
-Slidev is a slides maker and presenter designed for developers, consist of the following features
-
-- 📝 **Text-based** - focus on the content with Markdown, and then style them later
-- 🎨 **Themable** - themes can be shared and re-used as npm packages
-- 🧑‍💻 **Developer Friendly** - code highlighting, live coding with autocompletion
-- 🤹 **Interactive** - embed Vue components to enhance your expressions
-- 🎥 **Recording** - built-in recording and camera view
-- 📤 **Portable** - export to PDF, PPTX, PNGs, or even a hostable SPA
-- 🛠 **Hackable** - virtually anything that's possible on a webpage is possible in Slidev
-<br>
-<br>
-
-Read more about [Why Slidev?](https://sli.dev/guide/why)
-
 <!--
-You can have `style` tag in markdown to override the style for the current page.
-Learn more: https://sli.dev/features/slide-scope-style
--->
-
-<style>
-h1 {
-  background-color: #2B90B6;
-  background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
-  background-size: 100%;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
-}
-</style>
-
-<!--
-Here is another comment.
+Presenter notes:
+- Open with: "Today, no image generators. Only text as medium."
+- Ask: "When does generated language become art?"
 -->
 
 ---
-transition: slide-up
-level: 2
----
 
-# Navigation
+# Why artists should care
 
-Hover on the bottom-left corner to see the navigation's controls panel, [learn more](https://sli.dev/guide/ui#navigation-bar)
+- New medium for text, image, sound, and concept generation
+- Fast ideation partner for variations and constraints
+- Also a mirror of culture, bias, and internet aesthetics
+- Changes authorship, process, and critique workflows
+- You still own taste, direction, and final responsibility
 
-## Keyboard Shortcuts
-
-|                                                     |                             |
-| --------------------------------------------------- | --------------------------- |
-| <kbd>right</kbd> / <kbd>space</kbd>                 | next animation or slide     |
-| <kbd>left</kbd>  / <kbd>shift</kbd><kbd>space</kbd> | previous animation or slide |
-| <kbd>up</kbd>                                       | previous slide              |
-| <kbd>down</kbd>                                     | next slide                  |
-
-<!-- https://sli.dev/guide/animations.html#click-animation -->
-<img
-  v-click
-  class="absolute -bottom-9 -left-7 w-80 opacity-50"
-  src="https://sli.dev/assets/arrow-bottom-left.svg"
-  alt=""
-/>
-<p v-after class="absolute bottom-23 left-45 opacity-30 transform -rotate-10">Here!</p>
+<!--
+Presenter notes:
+- Emphasize leverage: speed in exploration, not replacement of artistic intent.
+- Ask: "Where in your process do you get blocked?"
+- Connect to sketching: LLMs can be cognitive sketchbooks.
+-->
 
 ---
 layout: two-cols
-layoutClass: gap-16
+layoutClass: gap-14
 ---
 
-# Table of contents
+# Agenda
 
-You can use the `Toc` component to generate a table of contents for your slides:
-
-```html
-<Toc minDepth="1" maxDepth="1" />
-```
-
-The title will be inferred from your slide content, or you can override it with `title` and `level` in your frontmatter.
+- Short history of text generation
+- How LLM assistants are trained
+- Why hallucinations happen
+- Studio experiments with prompts
+- Authorship, ethics, and critique
 
 ::right::
 
-<Toc text-sm minDepth="1" maxDepth="2" />
+## Session outcome
+
+By the end, you can:
+
+- Explain the 3 training stages
+- Design better creative prompts
+- Build an LLM-assisted studio loop
+- Spot and manage failure modes
+
+<!--
+Presenter notes:
+- Set expectation: concept-first, technical depth only where useful.
+- Mention this is lecture + studio mindset, not just software tutorial.
+-->
 
 ---
 layout: image-right
-image: https://cover.sli.dev
+image: "./public/images/mohamed-marey-u6zbXHo5MB8-unsplash.jpg"
 ---
 
-# Code
+# Before LLMs
 
-Use code snippets and get the highlighting directly, and even types hover!
+- **Markov chains**: probabilistic word transitions
+- **ELIZA (1960s)**: scripted conversational illusion
+- Rule-based systems felt intelligent in narrow contexts
+- Early lesson: plausible language ≠ understanding
 
-```ts [filename-example.ts] {all|4|6|6-7|9|all} twoslash
-// TwoSlash enables TypeScript hover information
-// and errors in markdown code blocks
-// More at https://shiki.style/packages/twoslash
-import { computed, ref } from 'vue'
+<div class="absolute bottom-10">
+  <span style="font-size:.5rem">
+    Photo by <a href="https://unsplash.com/@abushihabmarey?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Mohamed Marey</a> on <a href="https://unsplash.com/photos/a-close-up-of-an-old-fashioned-typewriter-u6zbXHo5MB8?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  </span>
+</div>
 
-const count = ref(0)
-const doubled = computed(() => count.value * 2)
-
-doubled.value = 2
-```
-
-<arrow v-click="[4, 5]" x1="350" y1="310" x2="195" y2="342" color="#953" width="2" arrowSize="1" />
-
-<!-- This allow you to embed external code blocks -->
-<<< @/snippets/external.ts#snippet
-
-<!-- Footer -->
-
-[Learn more](https://sli.dev/features/line-highlighting)
-
-<!-- Inline style -->
-<style>
-.footnotes-sep {
-  @apply mt-5 opacity-10;
-}
-.footnotes {
-  @apply text-sm opacity-75;
-}
-.footnote-backref {
-  display: none;
-}
-</style>
 
 <!--
-Notes can also sync with clicks
-
-[click] This will be highlighted after the first click
-
-[click] Highlighted with `count = ref(0)`
-
-[click:3] Last click (skip two clicks)
--->
-
----
-level: 2
----
-
-# Shiki Magic Move
-
-Powered by [shiki-magic-move](https://shiki-magic-move.netlify.app/), Slidev supports animations across multiple code snippets.
-
-Add multiple code blocks and wrap them with <code>````md magic-move</code> (four backticks) to enable the magic move. For example:
-
-````md magic-move {lines: true}
-```ts {*|2|*}
-// step 1
-const author = reactive({
-  name: 'John Doe',
-  books: [
-    'Vue 2 - Advanced Guide',
-    'Vue 3 - Basic Guide',
-    'Vue 4 - The Mystery'
-  ]
-})
-```
-
-```ts {*|1-2|3-4|3-4,8}
-// step 2
-export default {
-  data() {
-    return {
-      author: {
-        name: 'John Doe',
-        books: [
-          'Vue 2 - Advanced Guide',
-          'Vue 3 - Basic Guide',
-          'Vue 4 - The Mystery'
-        ]
-      }
-    }
-  }
-}
-```
-
-```ts
-// step 3
-export default {
-  data: () => ({
-    author: {
-      name: 'John Doe',
-      books: [
-        'Vue 2 - Advanced Guide',
-        'Vue 3 - Basic Guide',
-        'Vue 4 - The Mystery'
-      ]
-    }
-  })
-}
-```
-
-Non-code blocks are ignored.
-
-```vue
-<!-- step 4 -->
-<script setup>
-const author = {
-  name: 'John Doe',
-  books: [
-    'Vue 2 - Advanced Guide',
-    'Vue 3 - Basic Guide',
-    'Vue 4 - The Mystery'
-  ]
-}
-</script>
-```
-````
-
----
-
-# Components
-
-<div grid="~ cols-2 gap-4">
-<div>
-
-You can use Vue components directly inside your slides.
-
-We have provided a few built-in components like `<Tweet/>` and `<Youtube/>` that you can use directly. And adding your custom components is also super easy.
-
-```html
-<Counter :count="10" />
-```
-
-<!-- ./components/Counter.vue -->
-<Counter :count="10" m="t-4" />
-
-Check out [the guides](https://sli.dev/builtin/components.html) for more.
-
-</div>
-<div>
-
-```html
-<Tweet id="1390115482657726468" />
-```
-
-<Tweet id="1390115482657726468" scale="0.65" />
-
-</div>
-</div>
-
-<!--
-Presenter note with **bold**, *italic*, and ~~striked~~ text.
-
-Also, HTML elements are valid:
-<div class="flex w-full">
-  <span style="flex-grow: 1;">Left content</span>
-  <span>Right content</span>
-</div>
+Presenter notes:
+- Keep this slide short and narrative.
+- Make analogy: collage logic in text systems.
+- Bridge: modern models scale this idea with huge data + neural training.
 -->
 
 ---
 
-# D3 in Components
+# Neural shift: RNN → Transformer
 
-(added in slidev-esp-template)
+- RNN/LSTM improved sequence modeling but struggled with long context
+- Transformer introduced attention across all tokens
+- Better parallel training on GPUs
+- Enabled scale: billions of parameters, trillions of tokens
 
-You can use D3.js to create complex diagrams and visualizations by creating a [component](https://sli.dev/guide/component) for your slides. You can find the code for this example in the `components` folder.
+# Evolution
 
-<div class="mt-8">
-<D3/>
-</div>
-
----
-class: px-20
----
-
-# Themes (edited for slidev-esp-template)
-
-🚫 Please stick with the **default** theme chosen for the **slidev-esp-template**.
-
-<div class="relative opacity-20 pointer-events-none">
-
-  Slidev comes with powerful theming support. Themes can provide styles, layouts, components, or even configurations for tools. Switching between themes by just **one edit** in your frontmatter:
-
-  <div grid="~ cols-2 gap-2" m="t-2">
-
-  ```yaml
-  ---
-  theme: default
-  ---
-  ```
-
-  ```yaml
-  ---
-  theme: seriph
-  ---
-  ```
-
-  <img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-default/01.png?raw=true" alt="">
-
-  <img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-seriph/01.png?raw=true" alt="">
-
-  </div>
-
-  Read more about [How to use a theme](https://sli.dev/guide/theme-addon#use-theme) and
-  check out the [Awesome Themes Gallery](https://sli.dev/resources/theme-gallery).
-
-</div>
-
----
-
-# Clicks Animations
-
-You can add `v-click` to elements to add a click animation.
-
-<div v-click>
-
-This shows up when you click the slide:
-
-```html
-<div v-click>This shows up when you click the slide.</div>
+```mermaid {theme: 'neutral', scale: 0.8}
+graph LR
+A[Rule-based] --> B[Markov]
+B --> C[RNN / LSTM]
+C --> D[Transformer]
+D --> E[LLM Assistants]
 ```
 
-</div>
+<!--
+Presenter notes:
+- "Attention" can be explained as dynamic relevance weighting.
+- Do not dive into equations; keep focus on capability jump.
+-->
+
+---
+
+# The 3-stage training pipeline
+
+1. **Pre-training**: learn internet-scale language statistics
+2. **Post-training (SFT)**: learn assistant behavior from curated dialogues
+3. **Reinforcement learning**: optimize for better task performance
 
 <br>
+
+> Think of it as: reading → guided examples → practice.
+
+<!--
+Presenter notes:
+- This is the backbone slide. Return to it throughout the talk.
+- Compare with art school workflow: references, tutorials, critique cycles.
+-->
+
+---
+layout: two-cols
+layoutClass: gap-14
+---
+
+# Stage 1: Pre-training
+
+- Crawl + filter massive web text
+- Tokenize text into model-readable units
+- Train next-token prediction objective
+- Update billions of parameters via gradient descent
+- Output: a **base model**
+
+::right::
+
+## Cultural compression
+
+- Parameters become lossy memory of patterns
+- Captures style, structure, and associations
+- Includes quality + bias from source data
+- Powerful, but not truth-verified
+
+<!--
+Presenter notes:
+- Use phrase from source: "lossy compression of the internet".
+- Stress that filtering helps but does not remove all social bias.
+-->
+
+---
+
+# What a base model is (and is not)
+
+- A statistical text simulator
+- Great at continuation and style mimicry
+- Can be coherent, creative, and wrong
+- Not yet an aligned assistant
+- Not a stable identity or self-aware agent
+
+<!--
+Presenter notes:
+- Mention GPT-2 as historical anchor from the source material.
+- Clarify: base model can imitate chat format but may drift.
+-->
+
+---
+layout: two-cols
+layoutClass: gap-14
+---
+
+# Stage 2: Post-training (SFT)
+
+- Replace web corpus with human-written conversations
+- Train on "ideal assistant" responses
+- Use special role tokens (user/assistant/system)
+- Encode helpful, truthful, harmless behavior
+
+::right::
+
+## Design implication
+
+- Assistant style is learned, not magical
+- It reflects labeler instructions and examples
+- Modern pipelines mix human + synthetic dialogues
+
+<!--
+Presenter notes:
+- Key quote to paraphrase: you're interacting with a simulation of labeling policy.
+- Discuss how "voice" can be engineered through data.
+-->
+
+---
+
+# Stage 3: Reinforcement Learning (RL)
+
+- Model generates many candidate answers for a task
+- System rewards outputs that reach correct or preferred outcomes
+- Training increases probability of successful token paths
+- Effect: better reliability and more self-checking reasoning traces
+
+> School analogy: reading (pre-training) → worked examples (SFT) → practice (RL)
+
+<!--
+Presenter notes:
+- Emphasize RL as "practice with feedback", not hand-written reasoning steps.
+- Art bridge: similar to iterative studio critique loops with selection pressure.
+-->
+
+---
+layout: image-right
+image: "https://images.unsplash.com/photo-1575191832807-0c101537b862?auto=format&fit=crop&w=1400&q=80"
+---
+
+# Hallucination: aesthetic power, factual risk
+
+- Model predicts plausible tokens, not verified truth
+- If uncertainty is unseen in training, confidence is overproduced
+- Can fabricate names, facts, citations, biographies
+- In art, fiction can be useful; in research, it is dangerous
+
+<!--
+Presenter notes:
+- Use the source example pattern: fake person gets confident conflicting bios.
+- Ask class: where is ambiguity productive vs unacceptable?
+-->
+
+---
+
+# Mitigations and tools
+
+- Train explicit "I don't know" behavior
+- Route questions to web search when freshness matters
+- Use code interpreter for counting/math/logic checks
+- Put trusted material in context window
+- Treat outputs as draft, then verify
+
+<!--
+Presenter notes:
+- Distinguish parameters (vague memory) vs context (working memory).
+- Practical rule: if stakes are high, require evidence trace.
+-->
+
+---
+
+# Models need tokens to think
+
+- Each generated token gets finite compute
+- Complex reasoning unfolds across multiple tokens
+- Better prompts create better reasoning trajectories
+- Ask for steps, criteria, and self-checks
 
 <v-click>
 
-The <span v-mark.red="3"><code>v-mark</code> directive</span>
-also allows you to add
-<span v-mark.circle.orange="4">inline marks</span>
-, powered by [Rough Notation](https://roughnotation.com/):
+### Prompt upgrade pattern
 
-```html
-<span v-mark.underline.orange>inline markers</span>
-```
+From: *"Give me a concept."*  
+To: *"Give 3 concepts, each with mood, medium, and critique risks."*
 
 </v-click>
 
-<div mt-20 v-click>
+<!--
+Presenter notes:
+- Link to artistic method: constraints create better form.
+- Demonstrate how prompt structure changes output quality.
+-->
 
-[Learn more](https://sli.dev/guide/animations#click-animation)
+---
 
+# LLMs in art and design
+
+- Short history of text-generating machines
+- Real text-based AI artworks and performances
+- Why this matters for authorship and style
+
+<!--
+Presenter notes:
+- Promise a visual, fast, fun session.
+- Mention: less theory, more concrete works.
+-->
+
+---
+layout: two-cols
+layoutClass: gap-14
+---
+
+# Timeline
+
+Short history of LLM art experiments:
+
+1. **1966** — ELIZA
+2. **1984** — Racter book
+3. **2010s** — neural text generation
+4. **2016** — AI screenplay (*Sunspring*)
+5. **2018+** — long-form LLM writing projects
+
+::right::
+
+# Core idea
+
+Machines moved from:
+
+- scripted dialogue
+- to statistical word prediction
+- to creative co-writing systems
+
+<!--
+Presenter notes:
+- Keep this as the map for all following case studies.
+-->
+
+---
+layout: image-right
+image: "./public/images/eliza.jpg"
+---
+
+# ELIZA (1966)
+
+- Early chatbot by Joseph Weizenbaum
+- Used pattern rules, not understanding
+- Still created strong emotional response in users
+
+🔗 [Wiki Page](https://en.wikipedia.org/wiki/ELIZA)
+
+<div class="absolute bottom-10">
+  <span style="font-size:.5rem">
+    Photo By Marcin Wichary from San Francisco, Calif. - Flickr, CC BY 2.0
+  </span>
 </div>
 
+<!--
+Presenter notes:
+- Emphasize "performance of understanding".
+- Ask students: is illusion alone artistically valid?
+-->
+
+---
+layout: image-right
+image: "./public/images/racter-amiga-title-screen.png"
 ---
 
-# Motions
+# Racter (1984)
 
-Motion animations are powered by [@vueuse/motion](https://motion.vueuse.org/), triggered by `v-motion` directive.
+- *The Policeman's Beard is Half Constructed*
+- Famous early machine-generated text publication
+- Mix of absurdity, poetry, and glitchy narrative voice
 
-```html
-<div
-  v-motion
-  :initial="{ x: -80 }"
-  :enter="{ x: 0 }"
-  :click-3="{ x: 80 }"
-  :leave="{ x: 1000 }"
->
-  Slidev
-</div>
-```
+🔗 [Wiki Page](https://en.wikipedia.org/wiki/The_Policeman%27s_Beard_Is_Half_Constructed)
 
-<div class="w-60 relative">
-  <div class="relative w-40 h-40">
-    <img
-      v-motion
-      :initial="{ x: 800, y: -100, scale: 1.5, rotate: -50 }"
-      :enter="final"
-      class="absolute inset-0"
-      src="https://sli.dev/logo-square.png"
-      alt=""
-    />
-    <img
-      v-motion
-      :initial="{ y: 500, x: -100, scale: 2 }"
-      :enter="final"
-      class="absolute inset-0"
-      src="https://sli.dev/logo-circle.png"
-      alt=""
-    />
-    <img
-      v-motion
-      :initial="{ x: 600, y: 400, scale: 2, rotate: 100 }"
-      :enter="final"
-      class="absolute inset-0"
-      src="https://sli.dev/logo-triangle.png"
-      alt=""
-    />
-  </div>
-
-  <div
-    class="text-5xl absolute top-14 left-40 text-[#2B90B6] -z-1"
-    v-motion
-    :initial="{ x: -80, opacity: 0}"
-    :enter="{ x: 0, opacity: 1, transition: { delay: 2000, duration: 1000 } }">
-    Slidev
-  </div>
+<div class="absolute bottom-10">
+  <span style="font-size:.5rem">
+    © 1999–2026 MobyGames
+  </span>
 </div>
 
-<!-- vue script setup scripts can be directly used in markdown, and will only affects current page -->
-<script setup lang="ts">
-const final = {
-  x: 0,
-  y: 0,
-  rotate: 0,
-  scale: 1,
-  transition: {
-    type: 'spring',
-    damping: 10,
-    stiffness: 20,
-    mass: 2
-  }
-}
-</script>
+<!--
+Presenter notes:
+- Frame as proto-generative literature.
+- Contrast with human surrealist writing traditions.
+-->
 
-<div
-  v-motion
-  :initial="{ x:35, y: 30, opacity: 0}"
-  :enter="{ y: 0, opacity: 1, transition: { delay: 3500 } }">
+---
+layout: image-right
+image: "./public/images/botnik.png"
+---
 
-[Learn more](https://sli.dev/guide/animations.html#motion)
+# Botnik Studios
 
+- Human+machine collaborative writing collective
+- Uses predictive text tools for comedy/satire
+- Strong example of curated co-authorship
+
+🔗 https://botnik.org/
+
+<div class="absolute bottom-10">
+  <span style="font-size:.5rem">
+    © 2018 botnikstudios
+  </span>
 </div>
 
----
-
-# LaTeX
-
-LaTeX is supported out-of-box. Powered by [KaTeX](https://katex.org/).
-
-<div h-3 />
-
-Inline $\sqrt{3x-1}+(1+x)^2$
-
-Block
-$$ {1|3|all}
-\begin{aligned}
-\nabla \cdot \vec{E} &= \frac{\rho}{\varepsilon_0} \\
-\nabla \cdot \vec{B} &= 0 \\
-\nabla \times \vec{E} &= -\frac{\partial\vec{B}}{\partial t} \\
-\nabla \times \vec{B} &= \mu_0\vec{J} + \mu_0\varepsilon_0\frac{\partial\vec{E}}{\partial t}
-\end{aligned}
-$$
-
-[Learn more](https://sli.dev/features/latex)
+<!--
+Presenter notes:
+- Important: artists are editors/directors, not passive users.
+- This is closer to studio practice than "press button" AI.
+-->
 
 ---
+layout: image-right
+image: "./public/images/sunspring_01.webp"
+---
 
-# Diagrams
+# *Sunspring* (2016)
 
-You can create diagrams / graphs from textual descriptions, directly in your Markdown.
+- Short film with screenplay generated by an LSTM model
+- Human actors perform strange machine-written dialogue
+- Shows friction between syntax, meaning, and performance
 
-<div class="grid grid-cols-4 gap-5 pt-4 -mb-6">
+🎬 [Video](https://www.youtube.com/watch?v=LY7x2Ihqjmc)
 
-```mermaid {scale: 0.5, alt: 'A simple sequence diagram'}
-sequenceDiagram
-    Alice->John: Hello John, how are you?
-    Note over Alice,John: A typical interaction
-```
-
-```mermaid {theme: 'neutral', scale: 0.8}
-graph TD
-B[Text] --> C{Decision}
-C -->|One| D[Result 1]
-C -->|Two| E[Result 2]
-```
-
-```mermaid
-mindmap
-  root((mindmap))
-    Origins
-      Long history
-      ::icon(fa fa-book)
-      Popularisation
-        British popular psychology author Tony Buzan
-    Research
-      On effectiveness<br/>and features
-      On Automatic creation
-        Uses
-            Creative techniques
-            Strategic planning
-            Argument mapping
-    Tools
-      Pen and paper
-      Mermaid
-```
-
-```plantuml {scale: 0.7}
-@startuml
-
-package "Some Group" {
-  HTTP - [First Component]
-  [Another Component]
-}
-
-node "Other Groups" {
-  FTP - [Second Component]
-  [First Component] --> FTP
-}
-
-cloud {
-  [Example 1]
-}
-
-database "MySql" {
-  folder "This is my folder" {
-    [Folder 3]
-  }
-  frame "Foo" {
-    [Frame 4]
-  }
-}
-
-[Another Component] --> [Example 1]
-[Example 1] --> [Folder 3]
-[Folder 3] --> [Frame 4]
-
-@enduml
-```
-
+<div class="absolute bottom-10">
+  <span style="font-size:.5rem">
+    © info@endcue.com
+  </span>
 </div>
 
-Learn more: [Mermaid Diagrams](https://sli.dev/features/mermaid) and [PlantUML Diagrams](https://sli.dev/features/plantuml)
+<!--
+Presenter notes:
+- Great "fun" moment in class: read one line out loud.
+- Discuss: is this bad writing, or new theater language?
+-->
 
 ---
-foo: bar
-dragPos:
-  square: 691,32,167,_,-16
+layout: image-right
+image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=1400&q=80"
 ---
 
-# Draggable Elements
+# Ross Goodwin, *1 the Road*
 
-Double-click on the draggable elements to edit their positions.
+- Road-trip book generated with a custom neural writing system
+- Combines sensors, location data, and machine text output
+- Documents machine perception as literary form
 
-<br>
+🔗 [Wiki Page](https://en.wikipedia.org/wiki/1_the_Road)
 
-###### Directive Usage
-
-```md
-<img v-drag="'square'" src="https://sli.dev/logo.png">
-```
-
-<br>
-
-###### Component Usage
-
-```md
-<v-drag text-3xl>
-  <div class="i-carbon:arrow-up" />
-  Use the `v-drag` component to have a draggable container!
-</v-drag>
-```
-
-<v-drag pos="663,206,261,_,-15">
-  <div text-center text-3xl border border-main rounded>
-    Double-click me!
-  </div>
-</v-drag>
-
-<img v-drag="'square'" src="https://sli.dev/logo.png">
-
-###### Draggable Arrow
-
-```md
-<v-drag-arrow two-way />
-```
-
-<v-drag-arrow pos="67,452,253,46" two-way op70 />
+<!--
+Presenter notes:
+- Emphasize process as artwork, not only final text.
+- Connect to conceptual art and procedural writing.
+-->
 
 ---
-src: ./pages/imported-slides.md
-hide: false
+layout: image-right
+image: "https://images.unsplash.com/photo-1535378917042-10a22c95931a?auto=format&fit=crop&w=1400&q=80"
 ---
+
+# PoemPortraits (2019)
+
+- Es Devlin + Google Arts & Culture
+- Public contributes a word, system returns a generated verse
+- Participatory poetry as installation experience
+
+🔗 [Doc](https://artsandculture.google.com/experiment/poemportraits)
+
+<!--
+Presenter notes:
+- Highlight interaction design: audience becomes co-writer.
+- Good bridge to participatory and relational art.
+-->
 
 ---
 
-# Monaco Editor
+# Why these works matter
 
-Slidev provides built-in Monaco Editor support.
+- They expose the boundary between generation and intention
+- They make process visible: prompting, curation, performance
+- They question authorship, labor, and originality
+- They turn "errors" into aesthetic material
 
-Add `{monaco}` to the code block to turn it into an editor:
-
-```ts {monaco}
-import { ref } from 'vue'
-import { emptyArray } from './external'
-
-const arr = ref(emptyArray(10))
-```
-
-Use `{monaco-run}` to create an editor that can execute the code directly in the slide:
-
-```ts {monaco-run}
-import { version } from 'vue'
-import { emptyArray, sayHello } from './external'
-
-sayHello()
-console.log(`vue ${version}`)
-console.log(emptyArray<number>(10).reduce(fib => [...fib, fib.at(-1)! + fib.at(-2)!], [1, 1]))
-```
----
-
-# Asciinema
-
-(added in slidev-esp-template)
-
-Slidev provides an addon for [Asciinema](https://github.com/Smile-SA/slidev-component-poll?tab=readme-ov-file).
-
-<Asciinema src="casts/demo.cast" :playerProps="{speed: 2, rows: 13}"/>
-
----
-
-# Poll and Quiz
-
-(added in slidev-esp-template)
-
-Slidev provides an addon for [Poll and Quiz](https://github.com/Smile-SA/slidev-component-poll).
-
-Here is a simple poll:
-
-<Poll
-  question="What is your favorite color ?"
-  :answers="['Red', 'Green', 'Blue']"
-  displayResults="poll"
-/>
+<!--
+Presenter notes:
+- Tie back to course themes: critical making, not tool worship.
+-->
 
 ---
 layout: center
 class: text-center
 ---
 
-# Learn More
+# Closing
 
-[Documentation](https://sli.dev) · [GitHub](https://github.com/slidevjs/slidev) · [Showcases](https://sli.dev/resources/showcases)
+### LLMs don't replace literary art.
+### They expand the space of textual performance.
 
-<PoweredBySlidev mt-10 />
+<br>
+
+Takeaway: Use LLM text critically — as material, partner, and provocation.
+
+<!--
+Presenter notes:
+- End on empowerment and curiosity.
+-->
